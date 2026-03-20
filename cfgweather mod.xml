@@ -1,0 +1,55 @@
+<weather reset="0" enable="1">
+
+    <overcast>
+        <current actual="0.5" time="120" duration="300"/>
+        <limits min="0.3" max="0.9"/>
+        <timelimits min="900" max="1500"/>
+        <changelimits min="0.1" max="0.5"/>
+    </overcast>
+
+    <fog>
+        <current actual="0.06" time="120" duration="300"/>
+        <limits min="0.01" max="0.18"/>
+        <timelimits min="900" max="1200"/>
+        <changelimits min="0.0" max="0.15"/>
+    </fog>
+
+    <!-- 🌧️ Rain is back, but controlled -->
+    <rain>
+        <current actual="0.0" time="60" duration="120"/>
+        <!-- Not constant -->
+        <limits min="0.0" max="0.4"/>
+        <timelimits min="600" max="1200"/>
+        <changelimits min="0.0" max="0.25"/>
+        <!-- Only happens with high overcast -->
+        <thresholds min="0.6" max="0.9" end="180"/>
+    </rain>
+
+    <windMagnitude>
+        <current actual="8.0" time="120" duration="300"/>
+        <limits min="4.0" max="24.0"/>
+        <timelimits min="120" max="300"/>
+        <changelimits min="0.0" max="14.0"/>
+    </windMagnitude>
+
+    <windDirection>
+        <current actual="0.0" time="120" duration="300"/>
+        <limits min="-3.14" max="3.14"/>
+        <timelimits min="60" max="120"/>
+        <changelimits min="-1.2" max="1.2"/>
+    </windDirection>
+
+    <!-- ❄️ Snow still a factor, but not constant -->
+    <snowfall>
+        <current actual="0.0" time="120" duration="600"/>
+        <limits min="0.0" max="0.35"/>
+        <timelimits min="900" max="2400"/>
+        <changelimits min="0.0" max="0.25"/>
+        <!-- Slightly rarer than rain -->
+        <thresholds min="0.7" max="0.95" end="240"/>
+    </snowfall>
+
+    <!-- ⛈️ Storms now intense -->
+    <storm density="1.0" threshold="0.65" timeout="20"/>
+
+</weather>
